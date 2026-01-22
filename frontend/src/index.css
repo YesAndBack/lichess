@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-lichess-dark text-white antialiased;
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-lichess-green hover:bg-lichess-green-dark text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-lichess-dark-lighter hover:bg-lichess-dark-light text-white border border-gray-600;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white;
+  }
+  
+  .card {
+    @apply bg-lichess-dark-lighter rounded-xl p-4 md:p-6 shadow-lg;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 bg-lichess-dark-light border border-gray-600 
+           rounded-lg text-white placeholder-gray-400
+           focus:outline-none focus:ring-2 focus:ring-lichess-green focus:border-transparent;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-win {
+    @apply bg-green-900/50 text-green-400;
+  }
+  
+  .badge-loss {
+    @apply bg-red-900/50 text-red-400;
+  }
+  
+  .badge-draw {
+    @apply bg-yellow-900/50 text-yellow-400;
+  }
+
+  /* Pagination */
+  .pagination-btn {
+    @apply p-2 rounded-lg bg-lichess-dark-light text-gray-400 
+           hover:bg-lichess-dark-lighter hover:text-white
+           disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-lichess-dark-light disabled:hover:text-gray-400
+           transition-all duration-200;
+  }
+
+  .pagination-num {
+    @apply w-10 h-10 rounded-lg bg-lichess-dark-light text-gray-400
+           hover:bg-lichess-dark-lighter hover:text-white
+           transition-all duration-200 font-medium;
+  }
+
+  .pagination-num.active {
+    @apply bg-lichess-green text-white hover:bg-lichess-green-dark;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161512;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+
+/* Chess piece font for titles */
+.title-gm { color: #bf811d; }
+.title-wgm { color: #bf811d; }
+.title-im { color: #bf811d; }
+.title-wim { color: #bf811d; }
+.title-fm { color: #bf811d; }
+.title-wfm { color: #bf811d; }
+.title-nm { color: #bf811d; }
+.title-cm { color: #bf811d; }
+.title-wcm { color: #bf811d; }
+.title-lm { color: #bf811d; }
+.title-bot { color: #7b7b7b; }
+
